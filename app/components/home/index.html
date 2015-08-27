@@ -1,0 +1,32 @@
+<div class="col-md-6 col-md-offset-1">
+	<div class="page-header"> 
+		<h1>{{ page.name }}</h1>
+	</div>
+	
+	<friends-table ng-repeat="control in controls" friends="friends" title="'Friends Table'" type="control"></friends-table>
+
+	<p>
+		<a href="#" class="btn btn-warning" ng-click="clearPage()">Clear Page</a> 
+		<a href="#" class="btn btn-success" ng-click="savePage()">Save Page</a> 
+
+	</p>
+</div>
+<div class="col-md-5">
+	<h4>Add controls to your page</h4>
+	<p>
+		<a href="#" ng-click="addControl('text')">Add a Textbox</a>
+	</p>
+	<p>
+		<a href="#"  ng-click="addControl('input')">Add a Input</a>
+	</p>
+	<p>
+		<a href="#"  ng-click="addControl('header', title)">Add a Header</a> <input type="string" ng-model="title" placeholder="type the heading text" />
+	</p>
+	<h4>Your Saved Pages</h4>
+	<table>
+		<tr ng-repeat="page in pages">
+			<td><a href="#" ng-click="showPage($index)">Page {{ $index }}</a></td>
+		</tr>
+	</table>
+
+</div>
